@@ -10,6 +10,7 @@ create table Dish (
 create table Ingredient (
     id serial primary key ,
     name varchar(255) not null,
+    price numeric(10,2) not null,
     category category not null ,
     id_dish int references dish(id)
 );

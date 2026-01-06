@@ -1,13 +1,25 @@
 package org.example;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private final String URL = "jdbc:postgresql://localhost:5432/mini_dish_db";
-    private final String USER = "mini_dish_db_manager";
-    private final String PASSWORD = "123456";
+    private final Dotenv dotenv ;
+    private final String URL ;
+    private final String USER ;
+    private final String PASSWORD ;
+
+    public DBConnection() {
+        this.dotenv = Dotenv.load();
+        this.URL = "jdbc:postgresql://"+dotenv.get("DB_HOST")+":"+dotenv.get("DB_PORT")+"/"+dotenv.get("DB_NAME");
+        this.USER = dotenv.get("DB_USER");
+        this.PASSWORD = dotenv.get("DB_PASSWORD");
+    }
+
+
 
     public Connection getConnection() {
         try{

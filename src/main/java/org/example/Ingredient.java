@@ -15,6 +15,9 @@ public class Ingredient {
     private CategoryEnum category;
     private Dish dish;
 
+    public Ingredient(int id, String name) {
+    }
+
     public String getDishName() {
         return dish.getName();
     }

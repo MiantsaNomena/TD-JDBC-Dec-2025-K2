@@ -18,9 +18,6 @@ public class DBConnection {
         this.USER = dotenv.get("DB_USER");
         this.PASSWORD = dotenv.get("DB_PASSWORD");
     }
-
-
-
     public Connection getConnection() {
         try{
             return DriverManager.getConnection(URL,USER,PASSWORD);

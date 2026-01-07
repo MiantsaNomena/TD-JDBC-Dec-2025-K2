@@ -12,5 +12,6 @@ create table Ingredient (
     name varchar(255) not null,
     price numeric(10,2) not null,
     category category not null ,
-    id_dish int references dish(id)
+    id_dish int references dish(id),
+    required_quantity NUMERIC(10, 2)
 );

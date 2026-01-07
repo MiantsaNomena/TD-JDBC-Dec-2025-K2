@@ -5,9 +5,9 @@ insert into dish (id, name, dish_type) values
     (4, 'Gâteau au chocolat', 'DESSERT'),
     (5, 'Salade de fruits', 'DESSERT');
 
-insert into ingredient (id, name, price, category, id_dish) values
-    (1, 'Laitue', 800.00, 'VEGETABLE', 1),
-    (2, 'Tomate', 600.00, 'VEGETABLE', 1),
-    (3, 'Poulet', 4500.00, 'ANIMAL', 2),
-    (4, 'Chocolat', 3000.00, 'OTHER', 4),
-    (5, 'Beurre', 2500.00, 'DAIRY', 4);
+INSERT INTO Ingredient (name, price, category, id_dish, required_quantity) VALUES
+    ('Laitue', 800.00, 'VEGETABLE', 1, 1),      -- 1 unité de laitue
+    ('Tomate', 600.00, 'VEGETABLE', 1, 2),      -- 2 unités de tomate
+    ('Poulet', 4500.00, 'ANIMAL', 2, 0.5),      -- 0.5 kg de poulet
+    ('Chocolat', 3000.00, 'OTHER', 4, NULL),    -- quantité inconnue
+    ('Beurre', 2500.00, 'DAIRY', 4, NULL
